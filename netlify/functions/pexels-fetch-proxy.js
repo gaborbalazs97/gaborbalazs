@@ -1,71 +1,62 @@
-// NOTE: This logic should replace the core fetch function in your original gallery.js file.
+// This file runs on the server, ensuring your API key is never exposed to the client.
 
-document.addEventListener('DOMContentLoaded', () => {
-    const gallery = document.getElementById('pexels-gallery');
-    
-    // 1. **CRITICAL CHANGE:** We call a secure, local endpoint, NOT the Pexels API directly.
-    // The Serverless Function will handle the API key securely.
-    const SECURE_PROXY_URL = '/.netlify/functions/pexels-fetch-proxy'; // Adjust if using Vercel/another provider
+// IMPORTANT: This function expects the Pexels API Key to be set as a private environment variable
+// named PEXELS_API_KEY in your hosting provider's dashboard (Netlify/Vercel).
 
-    async function fetchPexelsPhotosSecurely() {
-        try {
-            // 2. Pass the Collection ID in the query string (the key stays hidden on the server)
-            const COLLECTION_ID = 'YOUR_COLLECTION_ID_HERE'; // Re-use your working Collection ID
-            
-            // Add cache-buster to ensure fresh data
-            const timestamp = new Date().getTime(); 
-            const fetchUrl = `${SECURE_PROXY_URL}?collectionId=${COLLECTION_ID}&cachebuster=${timestamp}`;
+const PEXELS_API_KEY = process.env.PEXELS_API_KEY; 
 
-            gallery.innerHTML = '<p class="text-center py-10 text-gray-500">Loading photos securely...</p>'; 
-
-            // 3. Fetch from the local proxy endpoint
-            const response = await fetch(fetchUrl);
-            
-            if (!response.ok) {
-                // If the proxy fails, throw an error
-                throw new Error(`Proxy error! Status: ${response.status}.`);
-            }
-
-            const data = await response.json();
-            
-            gallery.innerHTML = ''; // Clear loading message
-
-            // 4. Check if the function returned an error message
-            if (data.error) {
-                 throw new Error(data.error);
-            }
-
-            const photos = data.media.filter(item => item.type === 'Photo');
-
-            if (photos.length === 0) {
-                 gallery.innerHTML = '<p class="text-center py-10 text-gray-500">Collection is empty or contains no photos.</p>';
-                 return;
-            }
-
-            // 5. Normal photo rendering logic (using photo.src.large)
-            photos.forEach(photo => {
-                // ... (your existing photo rendering logic, simplified here)
-                const photoLink = document.createElement('a');
-                photoLink.href = photo.url; 
-                photoLink.target = '_blank';
-                photoLink.classList.add('photo-item');
-                
-                const img = document.createElement('img');
-                img.src = photo.src.large; 
-                img.alt = photo.alt || `Photo by ${photo.photographer}`;
-                img.loading = 'lazy'; 
-
-                // NOTE: You would re-add your overlay/details logic here
-
-                photoLink.appendChild(img);
-                gallery.appendChild(photoLink);
-            });
-
-        } catch (error) {
-            console.error('Error fetching Pexels photos:', error);
-            gallery.innerHTML = `<p class="text-center py-10 text-red-500">Error loading photos: ${error.message}</p>`;
-        }
+// The handler is Netlify's standard function signature
+exports.handler = async (event, context) => {
+    // 1. Ensure the API key exists securely
+    if (!PEXELS_API_KEY) {
+        return {
+            statusCode: 500,
+            body: JSON.stringify({ error: 'Server configuration error: PEXELS_API_KEY not set.' }),
+        };
     }
 
-    fetchPexelsPhotosSecurely();
-});
+    // 2. Get the collection ID passed from the client-side script
+    const collectionId = event.queryStringParameters.collectionId;
+    
+    if (!collectionId) {
+        return {
+            statusCode: 400,
+            body: JSON.stringify({ error: 'Missing required collectionId parameter.' }),
+        };
+    }
+
+    try {
+        const PEXELS_URL = `https://api.pexels.com/v1/collections/${collectionId}?per_page=12`;
+
+        // 3. Make the secure API call on the server
+        const response = await fetch(PEXELS_URL, {
+            headers: {
+                Authorization: '4JtQpwR6p5guyBUK8IO5IAmWCh8GMOWVksr5nxiRCR6qXpEh889893fm', // The key is only used here!
+            },
+        });
+
+        if (!response.ok) {
+            // Forward the error from Pexels back to the client
+            return {
+                statusCode: response.status,
+                body: JSON.stringify({ error: `Pexels API Error: ${response.statusText}` }),
+            };
+        }
+
+        const data = await response.json();
+
+        // 4. Return the data to the frontend
+        return {
+            statusCode: 200,
+            // Netlify requires the body to be a string
+            body: JSON.stringify(data), 
+        };
+
+    } catch (error) {
+        console.error('Pexels Proxy Function Error:', error);
+        return {
+            statusCode: 500,
+            body: JSON.stringify({ error: 'Internal server error while fetching data.' }),
+        };
+    }
+};

@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // 1. **CRITICAL CHANGE:** We call a secure, local endpoint, NOT the Pexels API directly.
     // The Serverless Function will handle the API key securely.
-    const SECURE_PROXY_URL = '/.netlify/functions/pexels-fetch-proxy'; // Adjust if using Vercel/another provider
+    const SECURE_PROXY_URL = '/.netlify/functions/pexels-fetch-proxy.js'; // Adjust if using Vercel/another provider
 
     async function fetchPexelsPhotosSecurely() {
         try {
@@ -69,3 +69,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     fetchPexelsPhotosSecurely();
 });
+

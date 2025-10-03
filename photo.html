@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Photography | GB</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="Images/logo-GB.svg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+/* PURE CSS MASONRY LAYOUT */
+#pexels-gallery {
+    /* 1. Use the CSS columns property instead of grid */
+    column-count: 3; /* Display 3 columns. Change this number (4 or 5) to adjust density. */
+    column-gap: 20px; /* Space between the columns */
+    
+    /* Ensure it uses the full width */
+    width: 60%; 
+    margin: 0 auto; /* Center the container on the page */
+    padding-top: 20px;
+}
+
+/* 2. Styling the individual photo container */
+.photo-item {
+    /* Important: This forces the image to stay contained within its column */
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 20px; /* Space below each photo item */
+    break-inside: avoid; /* Prevents an image from being split across columns */
+    
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 3. The image itself */
+.photo-item img {
+    width: 100%;
+    /* Remove the fixed height (e.g., height: 300px) so photos can use their original proportions */
+    height: auto; 
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.photo-item img:hover {
+    transform: scale(1.03);
+}
+
+/* Optional: Make it responsive for smaller screens */
+@media (max-width: 900px) {
+    #pexels-gallery {
+        column-count: 2; /* Switch to 2 columns on tablets */
+    }
+}
+
+@media (max-width: 600px) {
+    #pexels-gallery {
+        column-count: 1; /* Switch to 1 column on phones */
+    }
+}
+
+
+.pexels-profile {
+    text-align: center;
+    font-family: Gabarito, Arial, Helvetica, sans-serif;
+    margin: 20px 0;
+}
+.pexels-profile-h:hover {
+    text-decoration: underline;
+}
+    </style>
+
+  </head>
+  <body>
+    <nav class="menu">
+      <a href="index.html">Home</a>
+      <a href="Works.html">Works</a>
+      <a href="Contact.html">Contact</a>
+    </nav>
+
+    <div id="pexels-gallery">
+        <p>Loading photos...</p>
+    </div>
+
+    <script src="gallery.js"></script>
+
+    <p class="pexels-profile"> For more photographs, visit <a href="https://www.pexels.com/@gaborbalazs97" target="_blank"><span class="pexels-profile-h">my Pexels profile!</span></a>.</p>
+
+    <footer>
+      <div class="footer">
+      <p>&copy; 2025 Gábor Balázs. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
+

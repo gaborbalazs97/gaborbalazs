@@ -1,0 +1,84 @@
+.project {
+  display: block;
+  width: 1000px;
+  height: 400px;
+  margin: 0;
+}
+
+.project-background {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+}
+
+.project-title {
+  font-family: Gabarito, Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: left;
+  margin: 0;
+  margin-top: 10px;
+  margin-bottom: -25px;
+  position: relative;
+  z-index: 2;
+  color: rgb(0, 0, 0);
+  padding-left: 10px;
+}
+
+.project-bg-img {
+  filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.05));
+  transition: all 0.3s ease;
+}
+
+.project-subtitle {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgb(100, 100, 100);
+}
+
+/* 1. Basic Reset and Sizing */
+.gallery-container {
+  width: 980px; /* Or a specific width */
+  height: 330px;
+  display: inline-block;
+  position: relative;
+  top: -345px;
+  left: 10px;
+  overflow: hidden; /* Hides content outside this box - essential! */
+  white-space: nowrap; /* Prevents images from wrapping to the next line */
+  margin: 0;
+  border: none;
+  border-radius: 10px;
+}
+
+/* 2. Styling the Images and Track */
+.gallery-track {
+  display: inline-block; /* Allows the track to be wider than the container */
+  animation: scroll-left 30s linear infinite; /* Apply the animation */
+}
+
+.gallery-track img {
+  height: 330px; /* Adjust height as needed */
+  width: auto;
+  margin-right: 10px; /* Spacing between images */
+  display: inline-block; /* Images side-by-side */
+  border-radius: 10px;
+}
+
+/* 3. The Keyframes Animation */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0); /* Start position: no translation */
+  }
+  100% {
+    /* Translate the track to the left by its full width (100%) */
+    /* If you duplicated the content exactly once, you can use -50% */
+    /* A safe bet for a seamless loop is to translate by the exact width of the non-duplicated content */
+    transform: translateX(-50%); 
+    /* The value -50% is commonly used when the content inside the track is exactly doubled */
+  }
+}
+
+.gallery-container:hover .gallery-track {
+  animation-play-state: paused;
+}

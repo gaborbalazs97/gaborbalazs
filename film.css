@@ -1,0 +1,80 @@
+p, button, input, a {
+  margin: 0;
+  font-family: Gabarito, Arial, Helvetica, sans-serif;
+}
+
+.filmfreeway {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  transition: color 0.3s;
+}
+
+.filmfreeway:hover {
+  text-decoration: underline;
+  color: rgb(164, 164, 164);
+}
+
+body {
+  background-color: rgb(10, 10, 10);
+}
+
+.menu a {
+  color: white;
+}
+
+.footer p {
+  color: white;
+}
+
+.film-name {
+  display: block;
+  width: 1000px;
+  text-align: left;
+  font-size: 2rem;
+  margin: 0;
+  margin-top: 100px;
+  margin-bottom: 35px;
+}
+
+.film-video {
+  display: block;
+  margin-top: 20px;
+  width: 1000px;
+  margin: 0;
+  margin-bottom: 50px;
+}
+
+.video {
+  display: block;
+  margin-top: 50px;
+  width: 1000px;
+  height: 562px;
+  border: none;
+  margin: 0;
+}
+
+.film-title {
+  font-size: 3rem;
+  font-weight: 600;
+  margin: 0;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.film-info {
+  font-size: 1.5rem;
+  font-weight: 200;
+  margin: 0;
+  color: rgb(183, 183, 183);
+}
+
+.more-film {
+  display: inline;
+  width: 1000px;
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0;
+  margin-top: 50px;
+  color: rgb(255, 255, 255);
+}

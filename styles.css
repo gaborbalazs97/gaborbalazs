@@ -1,0 +1,267 @@
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+
+p, button, input, button {
+  margin: 0;
+  font-family: Gabarito, Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;}
+
+.menu {
+  font-family: Gabarito, Arial, Helvetica, sans-serif;
+  background-color: none;
+  color: black;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 20px;
+  gap: 3rem;
+}
+
+.menu a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  padding: 0.5rem 1.5rem;
+  font-size: 1.3rem;
+  transition: font-weight 0.3s;
+}
+
+.menu a:hover {
+  font-weight: bold;
+}
+
+.footer {
+  background-color: none;
+  width: 100%;
+  text-align: center;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+body::after {
+  content: '';
+  display: block;
+  height: 50px;
+  margin-top: 100px;
+}
+
+.home-div1 {
+  width: 1000px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.location {
+  font-family: Gabarito, Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  margin-top: 30px;
+  text-align: left;
+  width: 350px;
+}
+
+.lino1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 400px;
+  width: 1920px;
+  object-fit: cover;
+  margin-top: 20px;
+}
+
+.home-left {
+  display: inline-block;
+  width: 450px;
+  vertical-align: top;
+  margin-right: 25px;
+}
+
+.pic-me {
+  display: inline-block;
+  border-radius: 5%;
+  width: 450px;
+  height: 450px;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.pic-me:hover {
+  transform: scale(1.015);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.education,
+.work {
+  font-family: Gabarito, Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  text-align: left;
+  width: 400px;
+}
+
+.education-title,
+.work-title {
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  margin-top: 50px;
+}
+
+.edu-list {
+  list-style-type: none;
+  list-style-position: outside;
+  font-size: 1.1rem;
+  padding-left: 0;
+  line-height: 1.3;
+}
+
+.home-right {
+  display: inline-block;
+  width: 450px;
+  vertical-align: top;
+  margin-left: 25px;
+}
+
+.h-d1-title {
+  font-family: Gabarito, Arial, Helvetica, sans-serif;
+  font-size: 4rem;
+  font-weight: 600;
+  margin: 0;
+  margin-bottom: 10px;
+  margin-top: 0px;
+  text-align: left;
+}
+
+.h-d1-subtitle {
+  font-family: Gabarito, Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  margin: 0;
+  text-align: left;
+  width: 350px;
+}
+
+.ig {
+  display: block;
+  width: 30px;
+  height: 30px;
+  text-align: left;
+  object-fit: cover;
+  margin-top: 50px;
+}
+
+.h-d1-link {
+  text-decoration: none;
+  color: black;
+}
+
+
+
+.single-work-text {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  background-color: none;
+  color: black;
+  font-size: 54px;
+  font-weight: 500;
+  transition: font-weight 0.3s;
+}
+
+.single-work-text:hover {
+  font-weight: 700;
+}
+
+.contact {
+  width: 1000px;
+  display: block;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.contact-title {
+  font-family: Gabarito, Arial, Helvetica, sans-serif;
+  font-size: 50px;
+  font-weight: 600;
+  text-align: left;
+  margin: 0;
+  margin-top: 100px;
+}
+
+::-webkit-input-placeholder {
+  color: white;
+}
+
+.input-name, .input-email, .input-subject {
+  display: block;
+  width: 100%;
+  height: 40px;
+  margin-top: 20px;
+  font-size: 20px;
+  padding: 5px 15px;
+  border: none;
+  background-color: #d9d9d9;
+  color: white;
+  border-radius: 10px;
+}
+
+.input-mess {
+  display: block;
+  width: 100%;
+  height: 40px;
+  margin-top: 20px;
+  font-size: 20px;
+  padding-top: 0px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 150px;
+  border: none;
+  background-color: #d9d9d9;
+  color: white;
+  border-radius: 10px;
+}
+
+.input-name, .input-email, .input-subject, .input-mess:focus {
+  outline: none;
+}
+
+.send-button {
+  display: block;
+  margin-top: 20px;
+  width: 150px;
+  height: 40px;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 5px 15px;
+  border: none;
+  background-color: #d9d9d9;
+  color: rgb(0, 0, 0);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, transform 0.1s;
+}
+
+.send-button:hover {
+  background-color: black;
+  color: white;
+}
+
+.send-button:active {
+  transform: scale(0.98);
+}

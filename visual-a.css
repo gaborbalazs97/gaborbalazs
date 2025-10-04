@@ -45,4 +45,6 @@
 .image-title {
     font-size: 1.3rem;
     font-weight: 600;
+    line-height: 1;
+    margin-bottom: 8px;
 }

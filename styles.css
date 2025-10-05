@@ -91,6 +91,17 @@ body::after {
   width: 350px;
 }
 
+.loc-icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.loc-text {
+  display: inline-block;
+  vertical-align: top;
+}
+
 .home-left {
   display: inline-block;
   width: 450px;

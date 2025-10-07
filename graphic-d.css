@@ -1,3 +1,24 @@
+.graphic-design-title {
+        display: inline-block;
+        width: 1000px;
+        text-align: left;
+        margin: 0;
+        margin-top: 50px;
+        margin-bottom: 30px;
+        font-size: 2rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .graphic-design-title:hover {
+        font-weight: 700;
+      }
+
+      body {
+        background-color: #fbfbfb;
+      }
+
+
 .project {
   display: block;
   width: 1000px;
@@ -74,7 +95,7 @@
     /* Translate the track to the left by its full width (100%) */
     /* If you duplicated the content exactly once, you can use -50% */
     /* A safe bet for a seamless loop is to translate by the exact width of the non-duplicated content */
-    transform: translateX(-50%); 
+    transform: translateX(-70%); 
     /* The value -50% is commonly used when the content inside the track is exactly doubled */
   }
 }

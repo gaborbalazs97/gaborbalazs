@@ -92,3 +92,6 @@
   transform: scale(0.98);
 }
 
+input:user-invalid {
+  background-color: rgb(106, 0, 255);
+}

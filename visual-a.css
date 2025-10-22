@@ -48,3 +48,44 @@
     line-height: 1;
     margin-bottom: 8px;
 }
+
+.visualarts-pagination {
+    font-family: Gabarito, Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    position: absolute;
+    bottom: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.visualarts-page a{
+    background-color: none;
+    color: rgb(184, 184, 184);
+    position: relative;
+    margin: 0;
+    bottom: 30px;
+    border: none;
+    transition: all 0.5s ease;
+}
+
+.visualarts-page a:hover {
+    bottom: 40px;
+    color: rgb(81, 81, 81);
+    background: none;
+    transition: all 0.5s ease;
+}
+
+.visualarts-page a.active {
+    color: black;
+    bottom: 30px;
+    border: none;
+}
+.visualarts-page a.active:hover {
+    bottom: 40px;
+    color: rgb(63, 63, 63);
+    transition: all 0.5s ease;
+}

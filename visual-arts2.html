@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Visual Arts | GB</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="visual-a.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="Images/logo-GB.svg">
+  </head>
+  <body>
+    <nav class="menu">
+      <a href="index.html">Home</a>
+      <a href="Works.html">Works</a>
+      <a href="Contact.html">Contact</a>
+    </nav>
+
+    <div class="visual-gallery">
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <div class="gallery-image-container">
+                    <img class="gallery-image" src="Images/visual-arts/hatvan (1).webp" alt="Visual Art 2">
+                </div>
+                <p class="image-title">Title</p>
+                <p>Lino-cut, 70x50 cm</p>
+                <p><i>2023 (Hatvan-Kézdivásárhely)</i></p>
+            </div>
+            
+            
+        </div>
+    </div>
+
+<div class="visualarts-pagination">
+      <div class="visualarts-page"><a href="visual-arts.html">1</a></div>
+      <div class="visualarts-page"><a class="active" href="visual-arts2.html">2</a></div>
+      <div class="visualarts-page"><a href="visual-arts.html">3</a></div>
+</div>
+
+
+    <script>
+        // Select all image container elements
+        const imageContainers = document.querySelectorAll('.gallery-image-container');
+        
+        // Define the zoom level for the effect (1.15 = 15% zoom)
+        const ZOOM_FACTOR = 3;
+
+        // Function to handle the mouse movement effect (Magnifying Glass Logic)
+        function handleMouseMove(e) {
+            const container = e.currentTarget;
+            const image = container.querySelector('img');
+
+            // Get mouse position relative to the container (0,0 is top-left)
+            const x = e.offsetX;
+            const y = e.offsetY;
+
+            // Get container dimensions
+            const width = container.clientWidth;
+            const height = container.clientHeight;
+
+            // Calculate normalized position (0 to 1)
+            const Px = x / width; 
+            const Py = y / height; 
+            
+            const Z_EXCESS = ZOOM_FACTOR - 1; // 0.15
+
+            // T_MAX is the maximum shift (half the excess size) in pixels
+            // This defines the boundary of movement for a perfect magnifying glass.
+            const T_MAX_X = width * (Z_EXCESS / 2);
+            const T_MAX_Y = height * (Z_EXCESS / 2);
+
+            // Calculate the translation needed (varies from T_MAX to -T_MAX)
+            // T_x = T_MAX * (1 - 2 * Px)
+            // If Px is 0 (far left), T_x is T_MAX (shift right)
+            // If Px is 1 (far right), T_x is -T_MAX (shift left)
+            const translateX = T_MAX_X * (1 - 2 * Px);
+            const translateY = T_MAX_Y * (1 - 2 * Py);
+
+            // Apply the transform: scale the image AND translate it
+            image.style.transform = `translate(${translateX}px, ${translateY}px) scale(${ZOOM_FACTOR})`;
+        }
+
+        // Function to reset the image transform when the mouse leaves
+        function handleMouseLeave(e) {
+            const image = e.currentTarget.querySelector('img');
+            
+            // Reset to base scale(1) to return to original size and position
+            image.style.transform = 'scale(1)'; 
+        }
+
+        // Attach event listeners to all image containers
+        imageContainers.forEach(container => {
+            container.addEventListener('mousemove', handleMouseMove);
+            container.addEventListener('mouseleave', handleMouseLeave);
+        });
+    </script>
+
+
+    <footer>
+      <div class="footer">
+      <p>&copy; 2025 Gábor Balázs. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

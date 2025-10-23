@@ -27,8 +27,10 @@ body {
 }
 
 .film-name {
-  display: block;
-  width: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  min-width: 1000px;
   text-align: left;
   font-size: 2rem;
   margin: 0;
@@ -37,9 +39,10 @@ body {
 }
 
 .film-video {
-  display: block;
+  display: flex;
+  justify-self: center;
   margin-top: 20px;
-  width: 1000px;
+  min-width: 1000px;
   margin: 0;
   margin-bottom: 50px;
 }
@@ -69,7 +72,6 @@ body {
 }
 
 .more-film {
-  display: inline;
   width: 1000px;
   text-align: left;
   font-size: 1.5rem;

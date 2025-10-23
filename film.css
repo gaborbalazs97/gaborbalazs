@@ -71,6 +71,17 @@ body {
   color: rgb(183, 183, 183);
 }
 
+.laurel-display {
+  display: flex;
+  justify-content: space-between;
+  min-width: 1000px;
+  margin-bottom: 50px;
+}
+
+.laurel {
+  width: 190px;
+}
+
 .more-film {
   width: 1000px;
   text-align: left;

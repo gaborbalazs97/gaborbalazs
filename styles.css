@@ -212,7 +212,7 @@ body::after {
 /* TELEFON SIZE */
 @media (max-width: 600px) {
   .display-work {
-    width: 600px;
+    width: 610px;
     height: 200px;
     display: flex;
     justify-content: center;
@@ -223,7 +223,7 @@ body::after {
     margin-top: 20px;
   }
   .main {
-    max-width: 600px;
+    max-width: 590px;
     display: flex;
     flex-direction: column;
     justify-self: center;
@@ -303,6 +303,115 @@ body::after {
   .work-title {
     font-weight: 600;
     font-size: 1.2rem;
+    margin-bottom: 10px;
+    margin-top: 25px;
+  }
+
+  .edu-list {
+    list-style-type: none;
+    list-style-position: outside;
+    font-size: 0.9rem;
+    padding-left: 0;
+    line-height: 1.3;
+  }
+}
+
+
+
+/* TABLET SIZE */
+@media (min-width : 600.02px) and ( max-width : 1000px ) {
+  .display-work {
+    width: 1010px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    object-fit: cover;
+    overflow: hidden;
+    margin-top: 20px;
+  }
+  .main {
+    max-width: 990px;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    padding: 10px;
+  }
+  .location {
+    font-size: 1rem;
+    margin-top: 18px;
+    text-align: left;
+    width: 300px;
+  }
+  .ig {
+    display: block;
+    width: 30px;
+    height: 30px;
+    text-align: left;
+    object-fit: cover;
+    margin-top: 18px;
+  }
+  .loc-text {
+    display: inline-block;
+    vertical-align: top;
+  }
+  .pic-me {
+    width: 300px;
+    height: 300px;
+  }
+  .home-div1 {
+    width: 900px;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 20px;
+    justify-content: center;
+    gap: 20px;
+  }
+  .home-div2 {
+    width: 900px;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    gap: 30px;
+  }
+  .home-left {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    vertical-align: top;
+  }
+  .home-right {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    vertical-align: top;
+  }
+  .h-d1-title {
+    font-size: 3rem;
+    font-weight: 600;
+    margin: 0;
+    text-align: left;
+  }
+  .h-d1-subtitle {
+    font-size: 2rem;
+    margin: 0;
+    margin-top: 10px;
+    text-align: left;
+    width: 400px;
+  }
+  .education,
+  .work {
+    font-size: 1rem;
+    margin-top: 20px;
+    text-align: left;
+    width: 400px;
+  }
+
+  .education-title,
+  .work-title {
+    font-weight: 600;
+    font-size: 1.4rem;
     margin-bottom: 10px;
     margin-top: 25px;
   }

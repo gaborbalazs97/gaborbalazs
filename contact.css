@@ -1,14 +1,14 @@
 .contact {
-  width: 1000px;
-  display: block;
+  width: min(1000px, 70%);
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
   margin: 0 auto;
   text-align: left;
 }
 
 .contact-title {
-  display: inline-block;
-  font-family: Gabarito, Arial, Helvetica, sans-serif;
-  font-size: 50px;
+  font-size: clamp(3rem, 5vw, 3rem);
   font-weight: 600;
   text-align: left;
   margin: 0;
@@ -25,11 +25,11 @@
 }
 
 .input-name, .input-email, .input-subject {
-  display: block;
-  width: 100%;
+  display: flex;
+  width: 97%;
   height: 40px;
   margin-top: 20px;
-  font-size: 20px;
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
   padding: 5px 15px;
   border: none;
   background-color: #d9d9d9;
@@ -39,15 +39,12 @@
 }
 
 .input-mess {
-  display: block;
-  width: 100%;
+  display: flex;
+  width: 97%;
   height: 40px;
   margin-top: 20px;
-  font-size: 20px;
-  padding-top: 0px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 150px;
+  font-size:  clamp(1.2rem, 3vw, 1.5rem);
+  padding: 0px 15px 150px 15px;
   border: none;
   background-color: #d9d9d9;
   color: white;
@@ -67,7 +64,9 @@
 }
 
 .send-button {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 20px;
   width: 150px;
   height: 40px;
@@ -95,3 +94,5 @@
 input:user-invalid {
   background-color: rgb(106, 0, 255);
 }
+
+

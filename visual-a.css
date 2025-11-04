@@ -1,5 +1,6 @@
 .visual-gallery {
     display: flex;
+   
     justify-self: center;
     justify-content: center;
     margin: 40px;
@@ -93,11 +94,10 @@
 }
 
 
-@media ( max-width : 750px ) {
+@media ( max-width : 450px ) {
     .visual-gallery {
-        justify-content: center;
         justify-self: center;
-        width: 500px;
+        width: 400px;
     }
 
     .gallery-grid {
@@ -105,8 +105,9 @@
         gap: 50px;
     }
     .gallery-item {
+        justify-self: center;
         width: 250px;
-        height: 420px;
+        height: 440px;
     }
     .gallery-image-container {
         width: 250px;
@@ -114,7 +115,7 @@
     }
 }
 
-@media ( min-width : 750.02px ) and ( max-width : 1000px ) {
+@media ( min-width : 450.02px ) and ( max-width : 1000px ) {
     .visual-gallery {
         justify-content: center;
         justify-self: center;

@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 3. USE THE COLLECTION ENDPOINT:
     // This calls the specific collection ID and fetches its media.
-    const PEXELS_URL = `https://api.pexels.com/v1/collections/${COLLECTION_ID}?per_page=21`;
+    const PEXELS_URL = `https://api.pexels.com/v1/collections/${COLLECTION_ID}?per_page=40`;
 
     async function fetchPexelsPhotos() {
         try {

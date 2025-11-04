@@ -24,7 +24,7 @@ a {
   align-items: center;
   margin: 0 auto;
   margin-top: 20px;
-  gap: min(3rem, 50%);
+  gap: 4rem;
 }
 
 .menu a {
@@ -221,6 +221,10 @@ body::after {
 
 /* TELEFON SIZE */
 @media (max-width: 450px) {
+  .menu {
+    gap: 1rem;
+  }
+
   .display-work {
     width: 100%;
     height: 150px;
@@ -315,7 +319,7 @@ body::after {
 /* TABLET SIZE */
 @media (min-width : 450.02px) and ( max-width : 1000px ) {
   .display-work {
-    width: 1010px;
+    width: 100%;
     height: 300px;
     display: flex;
     justify-content: center;

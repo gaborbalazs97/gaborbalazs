@@ -134,15 +134,29 @@ body::after {
   flex-direction: column;
 }
 
+.social-contact {
+  display: flex;
+  flex-direction: row;
+  vertical-align: middle;
+  gap: 2rem;
+  margin-top: 25px;
+}
+
 .ig {
   display: flex;
-  text-align: left;
-  margin-top: 25px;
 }
 .ig-icon {
   width: 30px;
   height: 30px;
   object-fit: cover;
+}
+
+.pexels {
+  display: flex;
+}
+
+.pexels-icon {
+  height: 30px;
 }
 
 .pic-me {
@@ -252,14 +266,13 @@ body::after {
 
   .location {
     font-size: 1rem;
-    margin-top: 15px;
     text-align: left;
-    width: 200px;
+    align-self: center;
+    justify-content: center;
   }
   .ig {
     display: flex;
     object-fit: cover;
-    margin-top: 20px;
   }
 
   .contact-info {
@@ -267,6 +280,9 @@ body::after {
     flex-direction: row;
     gap: 1rem;
     justify-content: center;
+    vertical-align: middle;
+    align-self: center;
+    width: 80%;
   }
 
   .pic-me {

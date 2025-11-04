@@ -222,7 +222,7 @@ body::after {
 /* TELEFON SIZE */
 @media (max-width: 450px) {
   .display-work {
-    width: 610px;
+    width: 100%;
     height: 150px;
     display: flex;
     justify-content: center;

@@ -25,6 +25,7 @@ a {
   margin: 0 auto;
   margin-top: 20px;
   gap: 4rem;
+  z-index: 100;
 }
 
 .menu a {
@@ -47,6 +48,7 @@ a {
   position: absolute;
   bottom: 0;
   left: 0;
+  z-index: 100;
 }
 
 

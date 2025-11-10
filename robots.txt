@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://gaborbalazs97.github.io/gaborbalazs/sitemap.xml

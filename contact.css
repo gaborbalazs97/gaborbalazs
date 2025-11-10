@@ -5,6 +5,8 @@
   justify-self: center;
   margin: 0 auto;
   text-align: left;
+  background-color: transparent;
+  z-index: 100;
 }
 
 .contact-title {
@@ -26,13 +28,13 @@
 
 .input-name, .input-email, .input-subject {
   display: flex;
-  width: 90%;
+  width: 100%;
   height: 40px;
   margin-top: 20px;
   font-size: clamp(1.2rem, 3vw, 1.5rem);
   padding: 5px 15px;
   border: none;
-  background-color: #d9d9d9;
+  background-color: rgba(180, 180, 180, 0.5);
   color: white;
   border-radius: 10px;
   transition: all 0.3s ease;
@@ -40,13 +42,13 @@
 
 .input-mess {
   display: flex;
-  width: 90%;
+  width: 100%;
   height: 40px;
   margin-top: 20px;
   font-size:  clamp(1.2rem, 3vw, 1.5rem);
-  padding: 0px 15px 150px 15px;
+  padding: 20px 15px 150px 15px;
   border: none;
-  background-color: #d9d9d9;
+  background-color: rgba(180, 180, 180, 0.5);
   color: white;
   border-radius: 10px;
   transition: all 0.3s ease;
@@ -58,7 +60,7 @@
 }
 
 .input-name:hover, .input-email:hover, .input-subject:hover, .input-mess:hover {
-  background-color: black;
+  background-color: rgba(100, 100, 100, 0.5);
   color: white;
   transition: background-color 0.3s, color 0.3s;
 }

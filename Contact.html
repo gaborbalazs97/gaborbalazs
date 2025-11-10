@@ -1,17 +1,51 @@
 <!DOCTYPE html>
 <html>
+  <!--SETUP: Fill in blank properties in HEAD-->
   <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+
+    <!-- Page title shown in browser tab -->
     <title>Contact | GB</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Responsive viewport settings for mobile devices -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+
+    <!-- Ensure compatibility with Internet Explorer -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- Enable full-screen appearance for iOS Safari -->
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- Open Graph metadata for social sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="" />
+
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="fluid-overlay-styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="Images/logo-GB.svg">
   </head>
+
   <body>
+    <canvas></canvas>
+    <!--The canvas on which the animation is drawn-->
+
+    <!--START OF CONTENT-->
+
     <nav class="menu">
       <a href="index.html">Home</a>
       <a href="Works.html">Works</a>
@@ -20,11 +54,11 @@
     <div class="contact">
       <p class="contact-title">Contact:</p>
       <form action="https://formsubmit.co/3d966d401c91df75d020954663a8d88a" method="POST">
-      <input class="input-name" type="text" name="name" placeholder="Name*" required>
-      <input class="input-email" type="email" pattern="[^ @]*@[^ @]*" name="email" placeholder="Email*" required>
-      <input class="input-subject" type="text" name="subject" placeholder="Subject">
-      <input class="input-mess" type="text" name="message" placeholder="Message">
-      <button class="send-button" type="submit">Send</button>
+        <input class="input-name" type="text" name="name" placeholder="Name*" required>
+        <input class="input-email" type="email" pattern="[^ @]*@[^ @]*" name="email" placeholder="Email*" required>
+        <input class="input-subject" type="text" name="subject" placeholder="Subject">
+        <input class="input-mess" type="text" name="message" placeholder="Message">
+        <button class="send-button" type="submit">Send</button>
       </form>
     </div>
     <footer>
@@ -32,5 +66,10 @@
       <p>&copy; 2025 Gábor Balázs. All rights reserved.</p>
       </div>
     </footer>
+
+    <!--END OF CONTENT-->
+
+    <!--SETUP: update the file paths if you move the file. Moving config and the LDR image requires making changes in the script-->
+    <script src="./webgl-fluid.js"></script>
   </body>
 </html>

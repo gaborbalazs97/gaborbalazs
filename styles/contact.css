@@ -1,0 +1,98 @@
+.contact {
+  width: min(1000px, 70%);
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  margin: 0 auto;
+  text-align: left;
+  background-color: transparent;
+  z-index: 100;
+}
+
+.contact-title {
+  font-size: clamp(3rem, 5vw, 3rem);
+  font-weight: 600;
+  text-align: left;
+  margin: 0;
+  margin-top: 100px;
+  transition: all 0.3s ease;
+}
+
+.contact-title:hover {
+  font-weight: 700;
+}
+
+::-webkit-input-placeholder {
+  color: white;
+}
+
+.input-name, .input-email, .input-subject {
+  display: flex;
+  width: 100%;
+  height: 40px;
+  margin-top: 20px;
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  padding: 5px 15px;
+  border: none;
+  background-color: rgba(180, 180, 180, 0.5);
+  color: white;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.input-mess {
+  display: flex;
+  width: 100%;
+  height: 40px;
+  margin-top: 20px;
+  font-size:  clamp(1.2rem, 3vw, 1.5rem);
+  padding: 20px 15px 150px 15px;
+  border: none;
+  background-color: rgba(180, 180, 180, 0.5);
+  color: white;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.input-name, .input-email, .input-subject, .input-mess:focus {
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.input-name:hover, .input-email:hover, .input-subject:hover, .input-mess:hover {
+  background-color: rgba(100, 100, 100, 0.5);
+  color: white;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.send-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  width: 150px;
+  height: 40px;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 5px 15px;
+  border: none;
+  background-color: #d9d9d9;
+  color: rgb(0, 0, 0);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.send-button:hover {
+  background-color: black;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.send-button:active {
+  transform: scale(0.98);
+}
+
+input:user-invalid {
+  background-color: rgb(106, 0, 255);
+}

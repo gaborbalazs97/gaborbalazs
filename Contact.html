@@ -31,8 +31,8 @@
     <meta property="og:description" content="" />
     <meta property="og:url" content="" />
 
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/contact.css">
     <link rel="stylesheet" href="fluid-overlay-styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,8 +54,8 @@
     <div class="contact">
       <p class="contact-title">Contact:</p>
       <form action="https://formsubmit.co/3d966d401c91df75d020954663a8d88a" method="POST">
-        <input class="input-name" type="text" name="name" placeholder="Name*" required>
-        <input class="input-email" type="email" pattern="[^ @]*@[^ @]*" name="email" placeholder="Email*" required>
+        <input class="input-name" title="Required" type="text" name="name" placeholder="Name*" required>
+        <input class="input-email" title="Required" type="email" pattern="[^ @]*@[^ @]*" name="email" placeholder="Email*" required>
         <input class="input-subject" type="text" name="subject" placeholder="Subject">
         <input class="input-mess" type="text" name="message" placeholder="Message">
         <button class="send-button" type="submit">Send</button>

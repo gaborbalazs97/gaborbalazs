@@ -267,7 +267,7 @@ body::after {
 
 
 /* TELEFON SIZE */
-@media (max-width: 550px) {
+@media (max-width: 450px) {
   .menu {
     gap: 1rem;
   }

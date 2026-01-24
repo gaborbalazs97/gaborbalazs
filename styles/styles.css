@@ -1,9 +1,9 @@
 body {
   margin: 0;
-  display: flex;
+  /*display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
+  position: relative;*/
   font-family: Gabarito, Arial, Helvetica, sans-serif;
 }
 
@@ -45,15 +45,29 @@ a {
   width: 100%;
   text-align: center;
   height: 50px;
-  position: absolute;
+  position: relative;
+  margin-top: 100px;
   bottom: 0;
   left: 0;
   z-index: 100;
 }
 
-
+.work-sample {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
 
 .display-work {
+  display: flex;
+  justify-self: center;
+  width: 100vw;
+  height: 400px;
+  position: relative;
+  margin-top: 20px;
+}
+
+/*.display-work {
   width: 100%;
   height: 400px;
   display: flex;
@@ -62,7 +76,7 @@ a {
   object-fit: cover;
   overflow: hidden;
   margin-top: 20px;
-}
+}*/
 
 body::after {
   content: '';
@@ -97,6 +111,7 @@ body::after {
 .home-div3 {
   width: 1000px;
   display: flex;
+  flex-direction: column;
   margin: 0;
   margin-top: 50px;
   justify-content: center;
@@ -258,9 +273,15 @@ body::after {
 
 
 /* TELEFON SIZE */
-@media (max-width: 450px) {
+@media (max-width: 550px) {
   .menu {
     gap: 1rem;
+  }
+
+  .work-sample {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
   }
 
   .display-work {

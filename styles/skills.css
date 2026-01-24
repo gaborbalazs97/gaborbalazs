@@ -1,0 +1,174 @@
+body {
+        margin: 20px auto;
+        font-weight: 600;
+        width: 1000px; /* Main content width */
+        text-align: center;
+        }
+
+      .skill-title {
+        display: flex;
+        font-size: clamp(1.5rem, 5vw, 2rem);
+        font-weight: 600;
+        width: 100%;
+        text-align: left;
+        margin: 0 0 40px 0;
+        transition: font-weight 0.3s cubic-bezier(.42, 0, .44, 1.68);
+      }
+      .skill-title:hover {
+        font-weight: 600;
+      }
+
+      .softwares-title, .ability-title {
+        display: flex;
+        font-size: 2rem;
+        font-weight: 300;
+        width: 45%;
+        text-align: left;
+        margin-bottom: 40px;
+        transition: font-weight 0.3s cubic-bezier(.42, 0, .44, 1.68);
+      }
+      .softwares-title:hover, .ability-title:hover {
+        font-weight: 500;
+        width: 45%;
+      }
+
+      /* --- Progress Text --- */
+      .progress-text {
+        font-size: 1rem;
+        color: black;
+        margin-bottom: 1em;
+        font-weight: 600;
+      }
+
+      .all-skills {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+      }
+
+      .all-softwares {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 450px;
+      }
+
+      .all-abilities {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 450px;
+      }
+
+      /* --- Circle Bars (Softwares) --- */
+      .skillclass {
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: flex-start; /* Aligned left */
+        gap: 30px;
+        width: 100%;
+      }
+
+      .circle-wrapper {
+        width: 80px; 
+        height: 80px;
+      }
+
+      .skillclass a::before{
+        content: attr(data-software);
+        position: absolute;
+        white-space: nowrap;
+        align-content: center;
+        text-align: center;
+        background: white;
+        color: #5000D2;
+        text-decoration: none;
+        padding: 2px 7px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+        transform: translateY(30px) translateX(-15px) rotate(25deg);
+        opacity: 0;
+        transition: 200ms cubic-bezier(.42, 0, .44, 1.68);
+        z-index: -10;
+      }
+
+      .skillclass a:hover::before{
+        transform: translateY(-25px) rotate(0);
+        opacity: 1;
+        z-index: 10;
+      }
+
+      /* --- Line Bars (Abilities) --- */
+      .linebar-grid {
+        display: flex; /* Changed to flex column for stacking */
+        flex-direction: column;
+        width: 45%;
+      }
+      
+      /* New wrapper for each line bar block */
+      .line-item {
+          width: 400px; /* Width for the bar */
+          margin-bottom: 25px; /* Space between line items */
+          text-align: left;
+      }
+
+      .line-bar-container {
+        display: block;
+        width: 100%; /* Takes full width of .line-item (500px) */
+        height: 12px; /* Height of the line itself */
+        position: relative; /* Needed for positioning the text */
+      }
+
+      .line-label {
+        font-size: 1.2rem;
+        font-weight: 400;
+        margin-bottom: 2px;
+        display: block; /* Ensures label is on its own line */
+        transition: font-weight 0.3s cubic-bezier(.42, 0, .44, 1.68);
+      }
+      .line-label:hover {
+        font-weight: 600;
+      }
+
+      /* Style for the percentage text above the line (added by progressbar.js) */
+      /* Note: You need to target the element that progressbar.js creates for the text, 
+         which inherits .progress-text but is positioned absolutely inside the bar container. */
+      .line-bar-container .progress-text {
+          position: absolute !important; 
+          right: 0;
+          top: -25px !important; 
+          font-size: 1.2rem;
+          font-weight: 600;
+          color: #5000D2; /* Match the bar color for prominence */
+          /* No transform needed if using right/top positioning */
+          transform: none !important;
+      }
+
+      /* TELEFON SIZE */
+@media (max-width: 550px) {
+  .all-skills {
+    width: 380px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .all-softwares, .all-abilities {
+    width: 380px;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 40px;
+  }
+  .linebar-grid {
+    width: 100%;
+  }
+  .line-item {
+    width: 380px;
+  }
+  .skillclass {
+    justify-content: center;
+    gap: 20px;
+  }
+}

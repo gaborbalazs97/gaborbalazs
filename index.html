@@ -8,9 +8,11 @@
     <meta name="keywords" content="graphic design, visual art, motion design, films, photography, fine art, Gábor Balázs, visual artist, design portfolio">
     <meta name="author" content="Gábor Balázs">
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/skills.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/progressbar.js@1.1.1/dist/progressbar.min.js"></script>
     <link rel="icon" type="image/x-icon" href="Images/logo-GB.svg">
   </head>
   <body>
@@ -20,7 +22,9 @@
       <a href="Contact.html">Contact</a>
     </nav>
 
-    <div class="display-work"><a href="Works.html"><img src="Images/lino1.webp" alt="Description of image 1"></a></div>
+    <div class="display-work">
+      <img class="work-sample" src="Images/lino1.webp" alt="work sample">
+    </div>
 
     <main class="main">
       <div class="home-div1">
@@ -114,13 +118,186 @@
       </div>
 
       <div class="home-div3">
+        
+        <div class="skill-title">Skill set</div>
 
+        <div class="all-skills">
+
+          <div class="all-softwares">
+            
+            <div class="softwares-title">Softwares:</div>
+
+            <div class="skillclass" id="skills">
+              <a data-software="Adobe Illustrator"><div class="circle-wrapper" id="circle1"></div></a>
+              <a data-software="Adobe Photoshop"><div class="circle-wrapper" id="circle2"></div></a>
+              <a data-software="Adobe After Effects"><div class="circle-wrapper" id="circle3"></div></a>
+              <a data-software="Adobe Indesign"><div class="circle-wrapper" id="circle4"></div></a>
+              <a data-software="Adobe Audition"><div class="circle-wrapper" id="circle5"></div></a>
+              <a data-software="Adobe Lightroom"><div class="circle-wrapper" id="circle6"></div></a>
+              <a data-software="Adobe Animate"><div class="circle-wrapper" id="circle11"></div></a>
+              <a data-software="Adobe Fresco"><div class="circle-wrapper" id="circle14"></div></a>
+              <a data-software="Figma"><div class="circle-wrapper" id="circle7"></div></a>
+              <a data-software="Affinity"><div class="circle-wrapper" id="circle16"></div></a>
+              <a data-software="Davinci Resolve"><div class="circle-wrapper" id="circle8"></div></a>
+              <a data-software="Blender"><div class="circle-wrapper" id="circle9"></div></a>
+              <a data-software="Font Forge"><div class="circle-wrapper" id="circle10"></div></a>
+              <a data-software="Visual Studio Code"><div class="circle-wrapper" id="circle12"></div></a>
+              <a data-software="TV Paint"><div class="circle-wrapper" id="circle13"></div></a>
+              <a data-software="Microsoft Office"><div class="circle-wrapper" id="circle15"></div></a>
+            </div>
+            </div>
+
+          <div class="all-abilities"> 
+
+            <div class="ability-title">Abilities:</div>
+
+            <div class="linebar-grid">
+                        <div class="line-item">
+                    <span class="line-label">Brand and Logo Design</span>
+                    <div id="line1" class="line-bar-container"></div>
+                </div>
+                <div class="line-item">
+                    <span class="line-label">UI Design</span>
+                    <div id="line2" class="line-bar-container"></div>
+                </div>
+                <div class="line-item">
+                    <span class="line-label">Motion Graphics and Video Editing</span>
+                    <div id="line3" class="line-bar-container"></div>
+                </div>
+                <div class="line-item">
+                    <span class="line-label">Editorial works</span>
+                    <div id="line4" class="line-bar-container"></div>
+                </div>
+                <div class="line-item">
+                    <span class="line-label">Typeface Design</span>
+                    <div id="line5" class="line-bar-container"></div>
+                </div>
+                <div class="line-item">
+                    <span class="line-label">Website</span>
+                    <div id="line6" class="line-bar-container"></div>
+                </div>
+                <div class="line-item">
+                    <span class="line-label">3D modeling</span>
+                    <div id="line7" class="line-bar-container"></div>
+                </div>
+            </div>
+          </div> 
+        </div>
+        
       </div>
     </main>
 
+  <script>
+      // --- Configuration Data ---
+
+      // Configurations for your 9 Circle Progress Bars
+      const progressConfigs = [
+          { id: 'circle1', text: 'Ai', progress: 0.99 },
+          { id: 'circle2', text: 'Ps', progress: 0.9 },
+          { id: 'circle3', text: 'Ae', progress: 0.85 },
+          { id: 'circle4', text: 'Id', progress: 0.80 },
+          { id: 'circle5', text: 'Au', progress: 0.75 },
+          { id: 'circle6', text: 'Lr', progress: 0.80 },
+          { id: 'circle11', text: 'An', progress: 0.7 },
+          { id: 'circle14', text: 'Fr', progress: 0.80 },
+          { id: 'circle7', text: 'Figma', progress: 0.8 },
+          { id: 'circle8', text: 'Davinci', progress: 0.75 },
+          { id: 'circle9', text: 'Blender', progress: 0.40 },
+          { id: 'circle10', text: 'Font Forge', progress: 0.55 },
+          { id: 'circle16', text: 'Affinity', progress: 0.65 },
+          { id: 'circle12', text: 'VS Code', progress: 0.35 },
+          { id: 'circle13', text: 'TV Paint', progress: 0.40 },
+          { id: 'circle15', text: 'MS Office', progress: 0.90 },
+      ];
+      
+      // Configurations for 6 Line Progress Bars
+      const lineConfigs = [
+          { id: 'line1', progress: 0.99 }, 
+          { id: 'line2', progress: 0.95 }, 
+          { id: 'line3', progress: 0.90 }, 
+          { id: 'line4', progress: 0.85 }, 
+          { id: 'line5', progress: 0.70 }, 
+          { id: 'line6', progress: 0.55 }, 
+          { id: 'line7', progress: 0.40 }  
+      ];
+        
+      // Animation Parameters
+      const animationDuration = 2000; // 2 seconds for the fill animation
+      const delayBetweenBars = 100;   // 100 milliseconds delay between each circle starting
+
+    
+      // --- 1. Create and Animate the Circle Bars (Softwares) ---
+      progressConfigs.forEach((config, index) => {
+          const circleBar = new ProgressBar.Circle(`#${config.id}`, {
+              color: "#5000D2",       
+              strokeWidth: 8,
+              trailWidth: 15,
+              trailColor: "#F5F5F5",  
+              easing: "easeInOut",
+              from: { color: "#5000D2", width: 8 },
+              to: { color: "#5000D2", width: 8 },
+              text: {
+                  value: config.text, // Text remains static and centered
+                  className: 'progress-text',
+                  style: {
+                      color: 'black',
+                      position: 'absolute',
+                      top: '50%',
+                      left: '50%',
+                      padding: 0,
+                      margin: 0,
+                      transform: 'translate(-50%, -50%)', 
+                      'line-height': '0.9rem',
+                  }
+              },
+          });
+
+          const calculatedDelay = index * delayBetweenBars;
+
+          circleBar.animate(config.progress, { 
+              duration: animationDuration,
+              delay: calculatedDelay
+          });
+      });
+      
+      // --- 2. Create and Animate the Line Bars (Abilities) ---
+
+      const lineBarStartTime = (progressConfigs.length * delayBetweenBars) + 500; 
+
+      lineConfigs.forEach((config, index) => {
+          const lineBar = new ProgressBar.Line(`#${config.id}`, {
+              // Your CSS sets height to 8px, so we'll use that for thickness
+              strokeWidth: 8, 
+              trailWidth: 8, 
+              easing: 'easeInOut',
+              duration: animationDuration,
+              color: '#5000D2',
+              trailColor: '#F5F5F5',
+              // Ensure the SVG fills its container
+              svgStyle: { width: '100%', height: '100%' }, 
+            
+              // since you only want the bar animation.
+              text: {
+                  value: null,
+                  className: 'progress-text',
+                  style: {}
+              },
+              
+          });
+
+          const calculatedDelay = lineBarStartTime + (index * 150);
+
+          lineBar.animate(config.progress, { 
+              duration: animationDuration,
+              delay: calculatedDelay
+          });
+      });
+
+  </script>
+
     <footer>
       <div class="footer">
-        <p>&copy; 2025 Gábor Balázs. All rights reserved.</p>
+        <p>&copy; 2026 Gábor Balázs. All rights reserved.</p>
       </div>
     </footer>
   </body>

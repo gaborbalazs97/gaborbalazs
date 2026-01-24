@@ -1,7 +1,6 @@
 body {
         margin: 20px auto;
         font-weight: 600;
-        width: 1000px; /* Main content width */
         text-align: center;
         }
 
@@ -148,27 +147,47 @@ body {
       }
 
       /* TELEFON SIZE */
-@media (max-width: 550px) {
+@media (max-width: 450px) {
   .all-skills {
-    width: 380px;
+    width: 100%;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
   }
   .all-softwares, .all-abilities {
-    width: 380px;
+    width: 100%;
     align-items: center;
     justify-content: space-around;
     margin-bottom: 40px;
   }
   .linebar-grid {
-    width: 100%;
+    width: 90%;
   }
   .line-item {
-    width: 380px;
+    width: 90%;
+    padding: 0 10px;
   }
   .skillclass {
+    width: 80%;
     justify-content: center;
     gap: 20px;
+    padding: 0 0;
+  }
+  .circle-wrapper {
+    width: 60px; 
+    height: 60px;
+  }
+  .progress-text {
+    font-size: 0.75rem;
+    color: black;
+    margin-bottom: 1em;
+    font-weight: 600;
+  }
+  .skillclass a::before {
+    display: none;
+  }
+  .skill-title {
+    width: 100%;
+    justify-content: center;
   }
 }

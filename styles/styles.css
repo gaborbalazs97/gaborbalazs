@@ -325,6 +325,7 @@ svg {
   .loc-text {
     font-size: 1rem;
     text-align: right;
+    text-wrap: nowrap;
     vertical-align: middle;
     vertical-align: top;
   }

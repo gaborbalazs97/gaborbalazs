@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Services | GB</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="Images/logo-GB.svg">
+    <style>
+      body {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        font-family: Gabarito, Arial, Helvetica, sans-serif;
+      }
+      .serv-menu-bg {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #5000D2;
+        border: none;
+        border-radius: 30px;
+        width: auto;
+        height: auto;
+        padding: 2px;
+        margin-top: 50px;
+        gap: 20px;
+      }
+      .service-1-active {
+        background-color: white;
+        color: #5000D2;
+        font-size: 1.8rem;
+        font-weight: 500;
+        border: none;
+        border-radius: 30px;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+
+      .service-1 {
+        background-color: none;
+        color: rgb(255, 255, 255);
+        font-size: 1.8rem;
+        font-weight: 500;
+        border: none;
+        border-radius: 30px;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+
+      .detail-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: space-around;
+        align-items: start;
+        width: 45%;
+        height: auto;
+        margin-top: 50px;
+        gap: 50px;
+      }
+
+      .detail-content {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+        background-color: white;
+        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.15);
+        border-radius: 20px;
+        padding: 20px;
+      }
+
+      .content-title {
+        color: #5000D2;
+        font-size: 2rem;
+        font-weight: 700;
+        
+      }
+      
+      .content-text {
+        color: #5000D2;
+        font-size: 1.1rem;
+        margin: 0 0 0 -20px;
+        font-weight: 400;
+      }
+
+      .content-subtext {
+        color: rgb(189, 189, 189);
+        font-size: 0.8rem;
+        font-weight: 400;
+        margin-top: 5px;
+      }
+
+      .content-price {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #6D74BF;
+        margin-bottom: 5px;
+      }
+
+      .divider {
+        border: 1px solid #E0E0E0;
+        margin: 15px -20px 0 -20px;
+      }
+
+
+      /* TELEFON SIZE */
+      @media (max-width: 450px) {
+        .serv-menu-bg {
+          width: 90%;
+          gap: 1px;
+        }
+
+        .service-1-active {
+          font-size: 1rem;
+          text-align: center;
+          padding: 5px 10px;
+        }
+
+        .service-1 {
+          font-size: 1rem;
+          text-align: center;
+          padding: 5px 10px;
+        }
+
+        .detail-container {
+          grid-template-columns: repeat(1, 1fr);
+          width: 90%;
+        }
+      }
+
+    </style>
+
+
+  </head>
+  <body>
+    <nav class="menu">
+      <a href="index.html">Home</a>
+      <a href="Works.html">Works</a>
+      <a class="active" href="">Services</a>
+      <a href="Contact.html">Contact</a>
+    </nav>
+
+    <div class="serv-menu-bg">
+      <div class="service-1-active" onclick="logoBranding ();">Logo & Branding</div>
+      <div class="service-1" onclick="motionGraphics();">Motion Graphics</div>
+      <div class="service-1" onclick="uiDesign();">UI Design</div>
+      <div class="service-1" onclick="printables();">Printables</div>
+    </div>
+
+    <div class="detail-container">
+      <div class="detail-content">
+            <div class="content-title">Logo Design</div>
+            <hr class="divider">
+            <div class="content-text">
+              <ul>
+                <li>Custom concept development (no templates)</li>
+                <li>Up to 5 revision rounds</li>
+                <li>Black, white & color variations</li>
+                <li>High-resolution mockups for presentation</li>
+                <li>Final delivery in vector & raster formats (AI, SVG, PDF, PNG, JPG)</li>
+                <li>Social media & favicon exports</li>
+            </div>
+            <div class="content-price">500-1000 RON</div>
+            <div class="content-subtext">
+              <i>Price may vary depending on the complexity and length of the project.</i>
+            </div>
+          </div>
+          <div class="detail-content">
+            <div class="content-title">Visual Identity</div>
+            <hr class="divider">
+            <div class="content-text">
+              <ul>
+                <li>Logo system (primary, secondary, icon)</li>
+                <li>Color palette & usage rules</li>
+                <li>Typography system</li>
+                <li>Graphic elements & layout system</li>
+                <li>Brand patterns & visual assets</li>
+                <li>Comprehensive brand guidelines (PDF)</li>
+                <li>Optional social media templates</li>
+                <li>+ additional requests</li>
+            </div>
+            <div class="content-price"><div class="content-subtext">from</div> 4000 RON</div>
+          </div>
+    </div>
+    
+    <script>
+      const serviceButtons = document.querySelectorAll('.service-1, .service-1-active');
+
+      serviceButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          serviceButtons.forEach(btn => {
+            btn.classList.remove('service-1-active');
+            btn.classList.add('service-1');
+          });
+          button.classList.remove('service-1');
+          button.classList.add('service-1-active');
+        });
+      });
+
+      function logoBranding() {
+        const html = `
+          <div class="detail-content">
+            <div class="content-title">Logo Design</div>
+            <hr class="divider">
+            <div class="content-text">
+              <ul>
+                <li>Custom concept development (no templates)</li>
+                <li>Up to 5 revision rounds</li>
+                <li>Black, white & color variations</li>
+                <li>High-resolution mockups for presentation</li>
+                <li>Final delivery in vector & raster formats (AI, SVG, PDF, PNG, JPG)</li>
+                <li>Social media & favicon exports</li>
+            </div>
+            <div class="content-price">500-1000 RON</div>
+            <div class="content-subtext">
+              <i>Price may vary depending on the complexity and length of the project.</i>
+            </div>
+          </div>
+          <div class="detail-content">
+            <div class="content-title">Visual Identity</div>
+            <hr class="divider">
+            <div class="content-text">
+              <ul>
+                <li>Logo system (primary, secondary, icon)</li>
+                <li>Color palette & usage rules</li>
+                <li>Typography system</li>
+                <li>Graphic elements & layout system</li>
+                <li>Brand patterns & visual assets</li>
+                <li>Comprehensive brand guidelines (PDF)</li>
+                <li>Optional social media templates</li>
+                <li>+ additional requests</li>
+            </div>
+            <div class="content-price"><div class="content-subtext">from</div> 4000 RON</div>
+          </div>
+        `;
+        document.querySelector('.detail-container').innerHTML = html;
+      }
+
+      function motionGraphics() {
+        const html = `
+          <div class="detail-content">
+            <div class="content-title">Flat Design Animation</div>
+            <hr class="divider">
+            <div class="content-text">
+              <ul>
+                <li>Custom 2D motion design</li>
+                <li>Storyboard & concept planning</li>
+                <li>Smooth transitions & motion principles</li>
+                <li>Text & icon animation</li>
+                <li>Sound sync ready</li>
+                <li>Export optimized for web & social media</li>
+              </ul>
+            </div>
+            <div class="content-price"><div class="content-subtext">from</div> 1500 RON</div>
+            <div class="content-subtext">
+              <i>Price may vary depending on the complexity and length of the project.</i>
+            </div>
+          </div>
+          <div class="detail-content">
+            <div class="content-title">Kinetic Typography</div>
+            <hr class="divider">
+            <div class="content-text">
+              <ul>
+                <li>Dynamic animated typography</li>
+                <li>Music & beat synchronization</li>
+                <li>Modern motion effects</li>
+                <li>Custom typography animation style</li>
+                <li>Export optimized for web & social media</li>
+              </ul>
+            </div>
+            <div class="content-price"><div class="content-subtext">from</div> 1500 RON</div>
+            <div class="content-subtext">
+              <i>Price may vary depending on the complexity and length of the project.</i>
+            </div>
+          </div>
+          <div class="detail-content">
+            <div class="content-title">Infographic Animation</div>
+            <hr class="divider">
+            <div class="content-text">
+              <ul>
+                <li>Data visualization animation</li>
+                <li>Icon & chart animation</li>
+                <li>Corporate presentation style</li>
+                <li>Clear storytelling structure</li>
+                <li>Professional transitions</li>
+                <li>Export optimized for web & social media</li>
+              </ul>
+            </div>
+            <div class="content-price"><div class="content-subtext">from</div> 1500 RON</div>
+            <div class="content-subtext">
+              <i>Price may vary depending on the complexity and length of the project.</i>
+            </div>
+          </div>
+          <div class="detail-content">
+            <div class="content-title">Cut-out Animation</div>
+            <hr class="divider">
+            <div class="content-text">
+              <ul>
+                <li>Character rigging & animation</li>
+                <li>Scene transitions</li>
+                <li>Story-based animation</li>
+                <li>Frame-by-frame adjustments</li>
+                <li>Export optimized for web & social media</li>
+              </ul>
+            </div>
+            <div class="content-price"><div class="content-subtext">from</div> 1500 RON</div>
+            <div class="content-subtext">
+              <i>Price may vary depending on the complexity and length of the project.</i>
+            </div>
+          </div>
+        `;
+        document.querySelector('.detail-container').innerHTML = html;
+      }
+
+      function uiDesign() {
+        const html = `
+          <div class="detail-content">
+            <div class="content-title">Web design</div>
+            <hr class="divider">
+            <div class="content-text">
+              <ul>
+                <li>Custom website UI design</li>
+                <li>User experience optimization</li>
+                <li>Mobile-first responsive layouts</li>
+                <li>Wireframes & design system</li>
+                <li>Modern UI trends & accessibility standards</li>
+                <li>Developer-ready design files (Figma)</li>
+              </ul>
+            </div>
+            <div class="content-price"><div class="content-subtext">from</div> 2500 RON</div>
+            <div class="content-subtext">
+              <i>Price may vary depending on the complexity and length of the project.</i>
+            </div>
+          </div>
+          
+          <div class="detail-content">
+            <div class="content-title">App design</div>
+            <hr class="divider">
+            <div class="content-text">
+              <ul>
+                <li>iOS & Android interface design</li>
+                <li>User flow & interaction design</li>
+                <li>Component-based UI system</li>
+                <li>Prototype creation</li>
+                <li>Developer-ready design files (Figma)</li>
+              </ul>
+            </div>
+            <div class="content-price"><div class="content-subtext">from</div> 3000 RON</div>
+            <div class="content-subtext">
+              <i>Price may vary depending on the complexity and length of the project.</i>
+            </div>
+          </div>
+        `;
+        document.querySelector('.detail-container').innerHTML = html;
+      }
+
+      function printables() {
+        const html = `
+          <div class="detail-content">
+            <div class="content-title">Poster</div>
+            <hr class="divider">
+            <div class="content-text">
+              <ul>
+                <li>Up to 3 revision rounds</li>
+                <li>Print-ready CMYK files</li>
+                <li>Bleed & crop mark setup</li>
+              </ul>
+            </div>
+            <div class="content-price"><div class="content-subtext">from</div> 150 RON</div>
+            <div class="content-subtext">
+              <i>Price may vary depending on the complexity and length of the project.</i>
+            </div>
+          </div>
+          <div class="detail-content">
+            <div class="content-title">Business card</div>
+            <hr class="divider">
+            <div class="content-text">
+              <ul>
+                <li>Front & back design</li>
+                <li>Professional typography layout</li>
+                <li>Print-ready CMYK files</li>
+                <li>Bleed & crop mark setup</li>
+              </ul>
+            </div>
+            <div class="content-price"><div class="content-subtext">from</div> 100 RON</div>
+            <div class="content-subtext">
+              <i>Price may vary depending on the complexity and length of the project.</i>
+            </div>
+          </div>
+          <div class="detail-content">
+            <div class="content-title">Flyer & brochure</div>
+            <hr class="divider">
+            <div class="content-text">
+              <ul>
+                <li>Single or multi-page layout</li>
+                <li>Typography hierarchy setup</li>
+                <li>Print-ready CMYK files</li>
+                <li>Bleed & crop mark setup</li>
+              </ul>
+            </div>
+            <div class="content-price">100 RON / page</div>
+          </div>
+          <div class="detail-content">
+            <div class="content-title">Banner & Roll-up</div>
+            <hr class="divider">
+            <div class="content-text">
+              <ul>
+                <li>Brand-consistent layout</li>
+                <li>Print-ready CMYK files</li>
+                <li>Bleed & crop mark setup</li>
+              </ul>
+            </div>
+            <div class="content-price"><div class="content-subtext">from</div> 500 RON</div>
+            <div class="content-subtext">
+              <i>Price may vary depending on the complexity and length of the project.</i>
+            </div>
+          </div>
+        `;
+        document.querySelector('.detail-container').innerHTML = html;
+      }
+    </script>
+
+    <footer>
+      <div class="footer">
+      <p>&copy; 2026 Gábor Balázs. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

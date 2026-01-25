@@ -190,4 +190,8 @@ body {
     width: 100%;
     justify-content: center;
   }
+  .softwares-title, .ability-title {
+    width: 100%;
+    justify-content: center;
+  }
 }

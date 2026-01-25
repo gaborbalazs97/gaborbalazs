@@ -264,6 +264,7 @@ body::after {
 }
 
 svg {
+  margin: 0;
   max-width: 100%;
 }
 
@@ -305,28 +306,41 @@ svg {
   .h-d1-subtitle {
     text-align: center;
   }
-
-  .location {
-    font-size: 1rem;
-    text-align: left;
+  .contact-info {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+    gap: 1rem;
+    vertical-align: middle;
     align-self: center;
+    width: 80%;
+  }
+  .location {
+    margin: 0;
+    gap: 0.7rem;
+    font-size: 1rem;
+    justify-content: end;
+    
+  }
+  .loc-text {
+    font-size: 1rem;
+    text-align: right;
+    vertical-align: middle;
+    vertical-align: top;
+  }
+  .loc-icon {
+    margin: 0;
+    align-self: center;
+  }
+  .social-contact {
+    margin: 0 auto;
     justify-content: center;
+    align-self: center;
   }
   .ig {
     display: flex;
     object-fit: cover;
   }
-
-  .contact-info {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    justify-content: center;
-    vertical-align: middle;
-    align-self: center;
-    width: 80%;
-  }
-
   .pic-me {
     display: flex;
     align-self: center;

@@ -263,20 +263,6 @@ body::after {
   color: black;
 }
 
-.single-work-text {
-  position: absolute;
-  top: 10px;
-  left: 20px;
-  background-color: none;
-  font-size: 54px;
-  font-weight: 500;
-  transition: font-weight 0.3s;
-}
-
-.single-work-text:hover {
-  font-weight: 700;
-}
-
 svg {
   max-width: 100%;
 }
@@ -368,12 +354,6 @@ svg {
     display: flex;
     justify-content: center;
   }
-  .all-softwares, .all-abilities {
-    width: 380px;
-    align-items: center;
-    justify-content: space-around;
-    margin-bottom: 40px;
-  }
   .home-d1-left {
     display: flex;
     flex-direction: column;
@@ -385,7 +365,7 @@ svg {
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 380px;
+    width: 100%;
     vertical-align: top;
   }
   .home-d2-left {

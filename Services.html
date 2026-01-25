@@ -58,6 +58,7 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         justify-content: space-around;
+        justify-self: center;
         align-items: start;
         width: 45%;
         height: auto;
@@ -68,6 +69,7 @@
       .detail-content {
         display: flex;
         flex-direction: column;
+        justify-self: center;
         width: 90%;
         height: auto;
         background-color: white;
@@ -127,11 +129,18 @@
           font-size: 1rem;
           text-align: center;
           padding: 5px 10px;
+          height: 100%;
         }
 
         .detail-container {
           grid-template-columns: repeat(1, 1fr);
+          justify-self: center;
           width: 90%;
+        }
+
+        .detail-content {
+          justify-self: center;
+          width: 85%;
         }
       }
 

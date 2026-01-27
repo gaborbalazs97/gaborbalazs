@@ -75,18 +75,64 @@
     margin-bottom: 20px;
 }
 .viewCounter {
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: auto;
-    background-color: white;
-    border: none;
-    border-radius: 13px;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
-    padding: 10px 20px;
+
+    padding: 12px 22px;
     gap: 1rem;
+
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.4);
+
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+
+    overflow: hidden;
+    cursor: default;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
+
+/* Gradient overlay */
+.viewCounter::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        159deg,
+        rgba(235,240,245,0.9) 20%,
+        rgba(163,225,216,0.9) 100%
+    );
+
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+/* Hover effect */
+.viewCounter:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+}
+
+.viewCounter:hover::before {
+    opacity: 1;
+}
+
+/* Keep text above overlay */
+.viewCounter > * {
+    position: relative;
+    z-index: 1;
+}
+
 .views {
     display: flex;
     font-size: 2rem;
@@ -94,11 +140,11 @@
     margin: 0;
     padding: 0;
     text-wrap: nowrap;
-    transition: font-weight 0.3s ease;
 }
-.views:hover {
-    font-weight: 800;
+.viewCounter:hover {
+    transform: scale(1.05);
 }
+
 .subtext {
     display: flex;
     font-size: 1rem;
@@ -189,4 +235,3 @@
     </footer>
   </body>
 </html>
-

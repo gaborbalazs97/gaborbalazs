@@ -95,22 +95,75 @@ body {
 .laurel-display {
   display: flex;
   justify-content: space-between;
-  min-width: 1000px;
+  width: 100%;
   margin-bottom: 50px;
 }
 
 .laurel {
   width: 190px;
+  transition: transform 0.3s ease;
+}
+.laurel:hover {
+  transform: scale(1.05);
 }
 
 .more-film {
-  width: 1000px;
-  text-align: left;
+  width: 80%;
+  text-align: center;
   font-size: 1.5rem;
   font-weight: 400;
   margin: 0;
   margin-top: 50px;
   color: rgb(255, 255, 255);
+}
+
+.disclaimer {
+  display: flex;
+  width: auto;
+  max-width: 80%;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+  font-weight: 200;
+  text-wrap: nowrap;
+  margin: 40px 0;
+  padding: 5px 10px;
+  position: relative;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.4);
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 18px rgba(95, 95, 95, 0.12);
+  overflow: hidden;
+  cursor: default;
+  transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+.disclaimer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    159deg,
+    rgba(0, 0, 0, 0) 20%,
+    rgba(65, 65, 65, 0.5) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.disclaimer:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 20px rgba(255, 255, 255, 0.18);
+}
+.disclaimer:hover::before {
+  opacity: 1;
+}
+.disclaimer > * {
+    position: relative;
+    z-index: 10;
 }
 
 @media (max-width: 450px) {
